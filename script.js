@@ -107,10 +107,10 @@ void main() {
     float shadowSamples = 0.0;
     for (float y = -1.5; y <= 1.5; y += 1.0) {
       for (float x = -1.5; x <= 1.5; x += 1.0) {
-        shadowSamples += sampleShadow(vec2(x, y) * texelSize * 8.0, projectedTexcoord, currentDepth);
+        shadowSamples += sampleShadow(vec2(x, y) * texelSize * 12.0, projectedTexcoord, currentDepth);
       }
     }
-    shadowLight = shadowSamples / 16.0;  // 4x4 kernel
+    shadowLight = shadowSamples / 16.0;
   } else {
     shadowLight = 1.0;
   }
